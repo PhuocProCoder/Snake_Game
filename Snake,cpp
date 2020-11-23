@@ -1,0 +1,17 @@
+#include "Snake.h"
+
+// Di chuyển con trỏ console đến vị trí có tọa độ (x, y)
+void gotoXY (int x, int y){
+	COORD coord;
+	coord.X = x;
+	coord.Y = y;
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),coord);
+}
+
+// Xóa con trỏ nháy
+void noCursorType(){
+	CONSOLE_CURSOR_INFO info;
+	info.bVisible = FALSE;
+	info.dwSize = 20;
+	SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &info);
+}
